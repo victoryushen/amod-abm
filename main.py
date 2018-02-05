@@ -10,7 +10,7 @@ from lib.Env import *
 
 if __name__ == "__main__":
 	# path of the routing server
-	exe_loc = './osrm-backend-5.11.0/build/osrm-routed'
+	exe_loc = './osrm-backend-5.11.0/osrm-routed.exe'
 	# path of the road network file that the routing server uses
 	map_loc = './osrm-backend-5.11.0/boston_massachusetts.osm.pbf'
 
@@ -62,8 +62,8 @@ if __name__ == "__main__":
 
 			# generate, show and save the animation of this simulation
 			if IS_ANIMATION:
-				anime = anim(frames)
-				anime.save('output/anim.mp4', dpi=300, fps=None, extra_args=['-vcodec', 'libx264'])
+				# anime = anim(frames)
+				# anime.save('output/anim.mp4', dpi=300, fps=None, extra_args=['-vcodec', 'libx264'])
 				plt.show()
 
 			# output the simulation results and save data

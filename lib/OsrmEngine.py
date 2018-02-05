@@ -25,7 +25,7 @@ class OsrmEngine(object):
     def __init__(self,
                  exe_loc,
                  map_loc,
-                 ghost = '0.0.0.0',
+                 ghost = '127.0.0.1',
                  gport = 5000,
                  cst_speed = CST_SPEED):
         if not os.path.isfile(exe_loc):
@@ -41,7 +41,8 @@ class OsrmEngine(object):
         self.cst_speed = cst_speed
         # remove any open instance
         if self.check_server():
-            self.kill_server()
+            # self.kill_server()
+            pass
 
     # kill any routing server currently running before starting something new
     def kill_server(self):
@@ -65,11 +66,11 @@ class OsrmEngine(object):
             output = p.communicate()[0].decode("utf-8")
         except FileNotFoundError:
             output = ""
-        if "v5.11.0" not in str(output):
-            raise Exception("osrm does not have the right version")
+        # if "v5.11.0" not in str(output):
+        #     raise Exception("osrm does not have the right version")
         # check no running server
-        if self.check_server():
-            raise Exception("osrm-routed already running")
+        # if self.check_server():
+        #     raise Exception("osrm-routed already running")
         # start server
         p = Popen([self.exe_loc, self.map_loc], stdin=PIPE, stdout=PIPE, stderr=PIPE)
         time.sleep(2)
