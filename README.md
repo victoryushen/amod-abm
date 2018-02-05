@@ -50,6 +50,8 @@ The following parts of the code are still experimental. They might be NOT BUG-FR
 
 Python is an interpreted language and the core code could be executed without previously compiling into machine languages. However, OSRM, written in C++14, should be built from source beforehand.
 
+In this branch, I modified the configurations based on Windows 10. The OSRM windows build can be downloaded here: http://build.project-osrm.org/. 
+
 The following installation guideline targets MacOS. For more information please go to OSRM [Wiki](https://github.com/Project-OSRM/osrm-backend#open-source-routing-machine). 
 
 Install HomeBrew if not available:
